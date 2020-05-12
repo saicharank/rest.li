@@ -16,6 +16,7 @@
 
 package com.linkedin.darkcluster;
 
+import com.linkedin.test.util.SingleRetry;
 import java.net.URI;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -96,7 +97,7 @@ public class TestDarkClusterVerifierManager
     Assert.assertEquals(_verifier.onDarkResponseCount, 2, "expected on dark response count of 2");
   }
 
-  @Test
+  @Test(retryAnalyzer = SingleRetry.class)
   void testSafeVerifier()
     throws InterruptedException
   {

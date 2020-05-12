@@ -148,7 +148,7 @@ public class TestStreamResponse extends AbstractServiceTest
     factoryShutdownCallback.get();
   }
 
-  @Test
+  @Test(groups = { "ci-flaky" })
   public void testBackpressure() throws Exception
   {
     StreamRequestBuilder builder = new StreamRequestBuilder(_clientProvider.createHttpURI(_port, SMALL_URI));

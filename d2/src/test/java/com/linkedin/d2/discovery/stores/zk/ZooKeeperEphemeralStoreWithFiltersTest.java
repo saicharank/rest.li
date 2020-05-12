@@ -41,6 +41,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 /**
@@ -55,7 +56,7 @@ public class ZooKeeperEphemeralStoreWithFiltersTest
   private int _port;
   private ExecutorService _executor = Executors.newSingleThreadExecutor();
 
-  @Test(dataProvider = "dataD2ClusterWithNumberOfChildren")
+  @Test(dataProvider = "dataD2ClusterWithNumberOfChildren", groups = { "ci-flaky" })
   public void testPutWithoutPrefixAndFilter(String d2ClusterName, int numberOfChildren)
     throws IOException, InterruptedException, ExecutionException, PropertyStoreException
   {
@@ -85,7 +86,7 @@ public class ZooKeeperEphemeralStoreWithFiltersTest
     tearDown(store);
   }
 
-  @Test(dataProvider = "dataD2ClusterWithNumberOfChildrenAndHashCode")
+  @Test(dataProvider = "dataD2ClusterWithNumberOfChildrenAndHashCode", groups = { "ci-flaky" })
   public void testPutAndGetWithPrefixAndFilter(String d2ClusterName, List<String> childrenNames, int expectedPrefixDuplicates,
                                                List<ZookeeperEphemeralPrefixGenerator> prefixGenerators)
     throws IOException, InterruptedException, ExecutionException, PropertyStoreException

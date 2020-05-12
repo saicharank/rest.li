@@ -67,7 +67,7 @@ public class TestResponseDecoder extends RestLiIntegrationTest
    * pass the 'new' error to its inner callback's onError method.
    * {@link CallbackAdapter#onError(java.lang.Throwable)}
    */
-  @Test(dataProvider = com.linkedin.restli.internal.common.TestConstants.RESTLI_PROTOCOL_1_2_PREFIX + "dataProvider")
+  @Test(dataProvider = com.linkedin.restli.internal.common.TestConstants.RESTLI_PROTOCOL_1_2_PREFIX + "dataProvider", groups = { "ci-flaky" })
   public void testNonRestliServerErrorHandling(RestliRequestOptions requestOptions) throws Exception
   {
     Set<String> keys = new HashSet<String>();

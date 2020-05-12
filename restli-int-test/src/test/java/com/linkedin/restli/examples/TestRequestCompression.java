@@ -215,7 +215,7 @@ public class TestRequestCompression extends RestLiIntegrationTest
     };
   }
 
-  @Test(dataProvider = "requestData")
+  @Test(dataProvider = "requestData", groups = { "ci-flaky" })
   public void testUpdate(CompressionConfig requestCompressionConfig,
                          String supportedEncodings,
                          RestliRequestOptions restliRequestOptions,

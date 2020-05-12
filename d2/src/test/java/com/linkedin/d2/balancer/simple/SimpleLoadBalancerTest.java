@@ -1343,7 +1343,7 @@ public class SimpleLoadBalancerTest
     simulator.reset();
   }
 
-  @Test(groups = { "medium", "back-end" })
+  @Test(groups = { "medium", "back-end", "ci-flaky" })
   public void testLoadBalancerSimulationDegrader() throws URISyntaxException,
       IOException,
       ServiceUnavailableException,
@@ -1384,7 +1384,7 @@ public class SimpleLoadBalancerTest
     simulator.reset();
   }
 
-  @Test(groups = { "medium", "back-end" })
+  @Test(groups = { "medium", "back-end", "ci-flaky" })
   public void testLoadBalancerSimulationDegraderWithFileStore() throws URISyntaxException,
       IOException,
       ServiceUnavailableException,
