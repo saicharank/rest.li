@@ -18,10 +18,4 @@ record D2QuarantineProperties {
    * Specifies the method used for health checking. Format: <METHOD>:<FULL_PATH>. Defaults to OPTIONS method.
    */
   quarantineMethod: optional string
-
-  /**
-   * The latency threshold (in milliseconds) for health check requests. Response times longer
-   * than this threshold are considered as unhealthy.
-   */
-  quarantineLatency: optional long
 }
