@@ -18,7 +18,10 @@ package com.linkedin.data.codec.entitystream;
 
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;
 import com.fasterxml.jackson.dataformat.smile.async.NonBlockingByteArrayParser;
+import com.linkedin.data.Data;
 import com.linkedin.data.DataComplex;
+import java.util.EnumSet;
+
 
 /**
  * A SMILE decoder for a {@link DataComplex} object implemented as a {@link com.linkedin.entitystream.Reader} reading
@@ -28,7 +31,16 @@ import com.linkedin.data.DataComplex;
  */
 public class JacksonSmileDataDecoder<T extends DataComplex> extends AbstractJacksonDataDecoder<T>
 {
+  /**
+   * Deprecated, use {@link #JacksonSmileDataDecoder(SmileFactory, EnumSet)} instead
+   */
+  @Deprecated
   protected JacksonSmileDataDecoder(SmileFactory smileFactory, byte expectedFirstToken)
+  {
+    super(smileFactory, expectedFirstToken);
+  }
+
+  protected JacksonSmileDataDecoder(SmileFactory smileFactory, EnumSet<Data.Token> expectedFirstToken)
   {
     super(smileFactory, expectedFirstToken);
   }

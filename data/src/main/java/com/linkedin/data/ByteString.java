@@ -482,6 +482,26 @@ public final class ByteString
   }
 
   /**
+   * Feeds a chunk of this {@link ByteString} to a @{@link com.linkedin.data.Data.DataParser}
+   * without copying the underlying byte[].
+   *
+   * @param parser the feeder to feed the bytes to
+   * @param index the index of the chunk to feed
+   *
+   * @throws IOException if an error occurs while writing to the feeder
+   *
+   * @return The next index to feed or -1 if no more indices are left to feed.
+   */
+  public int feed(Data.DataParser parser, int index) throws IOException
+  {
+    ByteArray byteArray = _byteArrays.get(index);
+    int end = byteArray.getOffset() + byteArray.getLength();
+    parser.feedInput(byteArray.getArray(), byteArray.getOffset(), end);
+    int returnIndex = index + 1;
+    return returnIndex < _byteArrays.getArraySize() ? returnIndex : -1;
+  }
+
+  /**
    * Writes this {@link ByteString} to a stream without copying the underlying byte[].
    *
    * @param out the stream to write the bytes to
