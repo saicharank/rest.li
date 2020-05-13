@@ -6,5 +6,4 @@ dependencies {
   compile project(':pegasus-common')
   testCompile externalDependency.testng
   testCompile project(path: ':d2', configuration: 'testArtifacts')
-  testCompile project(':test-util')
 }

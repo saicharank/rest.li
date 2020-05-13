@@ -16,7 +16,6 @@
 
 package com.linkedin.darkcluster;
 
-import com.linkedin.test.util.SingleRetry;
 import java.net.URI;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -97,7 +96,7 @@ public class TestDarkClusterVerifierManager
     Assert.assertEquals(_verifier.onDarkResponseCount, 2, "expected on dark response count of 2");
   }
 
-  @Test(retryAnalyzer = SingleRetry.class)
+  @Test
   void testSafeVerifier()
     throws InterruptedException
   {
@@ -144,7 +143,7 @@ public class TestDarkClusterVerifierManager
     final CountDownLatch latch = new CountDownLatch(1);
     Runnable myCallable = latch::countDown;
     _executorService.submit(myCallable);
-    if (!latch.await(30, TimeUnit.SECONDS))
+    if (!latch.await(60, TimeUnit.SECONDS))
     {
       fail("unable to execute task on executor");
     }
