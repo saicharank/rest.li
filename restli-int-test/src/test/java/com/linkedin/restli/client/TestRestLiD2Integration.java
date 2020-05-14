@@ -41,7 +41,7 @@ import com.linkedin.restli.examples.groups.client.GroupsBuilders;
 import com.linkedin.restli.internal.common.AllProtocolVersions;
 import com.linkedin.restli.test.util.RootBuilderWrapper;
 
-import com.linkedin.test.util.SingleRetry;
+import com.linkedin.test.util.retry.SingleRetry;
 import java.util.concurrent.CountDownLatch;
 
 import org.testng.Assert;

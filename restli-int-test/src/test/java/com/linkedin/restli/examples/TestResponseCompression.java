@@ -45,7 +45,7 @@ import com.linkedin.restli.examples.greetings.client.GreetingsBuilders;
 import com.linkedin.restli.server.RestLiServiceException;
 import com.linkedin.restli.server.filter.Filter;
 import com.linkedin.restli.server.filter.FilterRequestContext;
-import com.linkedin.test.util.SingleRetry;
+import com.linkedin.test.util.retry.SingleRetry;
 
 import java.util.Arrays;
 import java.util.Collections;

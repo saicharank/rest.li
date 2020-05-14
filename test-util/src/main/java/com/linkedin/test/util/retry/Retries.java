@@ -14,7 +14,7 @@
    limitations under the License.
 */
 
-package com.linkedin.test.util;
+package com.linkedin.test.util.retry;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
@@ -28,20 +28,20 @@ import org.testng.ITestResult;
  *
  * @author Evan Williams
  */
-public abstract class VariableRetries implements IRetryAnalyzer
+public abstract class Retries implements IRetryAnalyzer
 {
-  private final int _maxRetries;
+  private final int _allowedRetries;
   private int _numRetries;
 
-  protected VariableRetries(int maxRetries)
+  protected Retries(int allowedRetries)
   {
-    _maxRetries = maxRetries;
+    _allowedRetries = allowedRetries;
     _numRetries = 0;
   }
 
   @Override
   public boolean retry(ITestResult result)
   {
-    return _numRetries++ < _maxRetries;
+    return _numRetries++ < _allowedRetries;
   }
 }

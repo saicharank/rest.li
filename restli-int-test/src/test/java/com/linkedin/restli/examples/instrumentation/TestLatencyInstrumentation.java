@@ -45,7 +45,7 @@ import com.linkedin.restli.examples.instrumentation.api.InstrumentationControl;
 import com.linkedin.restli.examples.instrumentation.client.LatencyInstrumentationBuilders;
 import com.linkedin.restli.examples.instrumentation.server.LatencyInstrumentationResource;
 import com.linkedin.restli.server.RestLiServiceException;
-import com.linkedin.test.util.SingleRetry;
+import com.linkedin.test.util.retry.SingleRetry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;

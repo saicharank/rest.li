@@ -14,17 +14,18 @@
    limitations under the License.
 */
 
-package com.linkedin.test.util;
+package com.linkedin.test.util.retry;
+
 
 /**
- * Allows a single retry for a given test method. This is useful for tests that require a warmup or are flaky.
+ * Allows three retries for a given test method. This is useful for tests that are especially flaky.
  *
  * @author Evan Williams
  */
-public class SingleRetry extends VariableRetries
+public class ThreeRetries extends Retries
 {
-  public SingleRetry()
+  public ThreeRetries()
   {
-    super(1);
+    super(3);
   }
 }

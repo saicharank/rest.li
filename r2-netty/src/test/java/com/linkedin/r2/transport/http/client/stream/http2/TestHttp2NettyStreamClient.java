@@ -34,7 +34,7 @@ import com.linkedin.r2.transport.common.bridge.common.TransportResponse;
 import com.linkedin.r2.transport.http.client.HttpClientBuilder;
 import com.linkedin.r2.testutils.server.HttpServerBuilder;
 import com.linkedin.test.util.ExceptionTestUtil;
-import com.linkedin.test.util.SingleRetry;
+import com.linkedin.test.util.retry.SingleRetry;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.handler.codec.http.HttpHeaderNames;
 import io.netty.handler.codec.http2.Http2Exception;

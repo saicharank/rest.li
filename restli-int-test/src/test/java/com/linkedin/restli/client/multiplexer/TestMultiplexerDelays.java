@@ -25,7 +25,7 @@ import com.linkedin.restli.common.HttpStatus;
 import com.linkedin.restli.examples.RestLiIntegrationTest;
 import com.linkedin.restli.examples.greetings.client.ActionsBuilders;
 
-import com.linkedin.test.util.SingleRetry;
+import com.linkedin.test.util.retry.SingleRetry;
 import java.util.concurrent.ExecutionException;
 
 import org.testng.Assert;

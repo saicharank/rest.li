@@ -1,6 +1,6 @@
 package com.linkedin.d2.balancer.servers;
 
-import com.linkedin.test.util.SingleRetry;
+import com.linkedin.test.util.retry.SingleRetry;
 import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;

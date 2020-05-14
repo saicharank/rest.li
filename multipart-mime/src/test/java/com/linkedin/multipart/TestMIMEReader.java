@@ -22,7 +22,7 @@ import com.linkedin.multipart.exceptions.SinglePartFinishedException;
 import com.linkedin.multipart.exceptions.MultiPartReaderFinishedException;
 import com.linkedin.r2.filter.R2Constants;
 
-import com.linkedin.test.util.SingleRetry;
+import com.linkedin.test.util.retry.SingleRetry;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
