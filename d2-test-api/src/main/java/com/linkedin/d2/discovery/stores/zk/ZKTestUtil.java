@@ -22,6 +22,7 @@ package com.linkedin.d2.discovery.stores.zk;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,8 +33,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
-import static org.testng.Assert.fail;
 
 /**
  * @author Steven Ihde
@@ -75,7 +74,7 @@ public class ZKTestUtil
     }
     catch (IOException e)
     {
-      fail("unable to instantiate real zk server.");
+      Assert.fail("unable to instantiate real zk server.");
       e.printStackTrace();
     }
 
